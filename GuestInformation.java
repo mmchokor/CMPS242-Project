@@ -1,6 +1,9 @@
+// A class to store all the guest infos and handle them
+
 import java.util.*;
 
-public class GuestInformation extends Reservation {
+public class GuestInformation extends Reservation{
+	// Attributes
 	protected String firstName;
 	protected String lastName;
 	protected String nationality;
@@ -9,20 +12,24 @@ public class GuestInformation extends Reservation {
 	protected String idType;
 	protected String idNumber;
 
+	// Default Constructor
 	public GuestInformation() {
 	}
 
+	// Constructor
 	public GuestInformation(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
+	// Constructor
 	public GuestInformation(String firstName, String lastName, String phoneNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 	}
 
+	// Constructor
 	public GuestInformation(String firstName, String lastName, String phoneNumber, String nationality, String address,
 			String idType, String idNumber) {
 		this.firstName = firstName;
@@ -34,6 +41,7 @@ public class GuestInformation extends Reservation {
 		this.idNumber = idNumber;
 	}
 
+	// Getters and Setters
 	public String getFirstName() {
 		return firstName;
 	}
@@ -90,6 +98,7 @@ public class GuestInformation extends Reservation {
 		this.idNumber = idNumber;
 	}
 
+	// A method to take in the guests informations
 	public void setGuestInfo(Scanner console) {
 		boolean flag = false;
 		System.out.println("Please enter the following information.");
@@ -171,8 +180,10 @@ public class GuestInformation extends Reservation {
 		} while (flag == true);
 	}
 
+	// Method to display all the guest informations
 	public void getGuestInformation() {
 		System.out.println("Guest Informations:");
+		System.out.println(getFirstName());
 		System.out.printf("Name: %s %s \n", firstName, lastName);
 		System.out.println("Address: " + address);
 		System.out.println("Nationality: " + nationality);

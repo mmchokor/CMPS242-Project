@@ -1,6 +1,13 @@
-
+// A class to store the info of triple room and it inherits from the class StandardRoom.java
 public class TripleRoom extends StandardRoom{
-	private int price=250;
-	protected int numberOfBeds=3;
-	protected String bedSize="Double Size Beds";
+	
+	public TripleRoom() {
+		super();
+		roomType="Triple Room";
+		price=250;
+		numberOfBeds=3;
+		bedSize="Double Size Beds";
+		
+	}
 }
+
