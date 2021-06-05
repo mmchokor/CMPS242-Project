@@ -68,12 +68,13 @@ public class Reservation {
 
 	// method to display the guest reservation info
 	public String toStringGuestReservation() {
-		return "Guest Reservation Info:\n" +
-		"Check in date: " + dateIn + "\n" +
-		"Check out date: " + dateOut + "\n" +
-		"Room Type:" + roomTypeStr + "\n" +
-		"Number of Adult(s): " + adults + "\n" +
-		"Number of Children: " + children + "\n";
+		return "GUEST RESERVATION INFORMATION:\n" +
+		"Check in date: \t\t" + dateIn + "\n" +
+		"Check out date: \t" + dateOut + "\n" +
+		"Room Type: \t\t" + roomTypeStr + "\n" +
+		"Number of Adult(s): \t" + adults + "\n" +
+		"Number of Children: \t" + children + "\n"+
+		"----------------------------------------------------";
 	}
 
 	public void roomTypeSelect(Scanner input) {

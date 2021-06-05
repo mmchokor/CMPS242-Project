@@ -182,12 +182,13 @@ public class GuestInformation extends Reservation{
 
 	// Method to display all the guest informations
 	public String toStringGuestInformation() {
-		return "Guest Informations:\n" +
-		"Name: " + firstName + " " + lastName + "\n" +
-		"Address: " + address + "\n" +
-		"Nationality: " + nationality + "\n" +
-		"Phone Number: " + phoneNumber + "\n" +
-		"ID Type: " + idType + "\n" +
-		"ID Number: " + idNumber + "\n";
+		return "GUEST INFORMATION:\n" +
+		"Name: \t\t" + firstName + " " + lastName + "\n" +
+		"Address: \t" + address + "\n" +
+		"Nationality: \t" + nationality + "\n" +
+		"Phone Number: \t" + phoneNumber + "\n" +
+		"ID Type: \t" + idType + "\n" +
+		"ID Number: \t" + idNumber + "\n"+
+		"---------------------------------------------------";
 	}
 }

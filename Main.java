@@ -10,6 +10,11 @@ public class Main {
       Reservation g[] = {new GuestInformation(), new Reservation()};
       CheckOut c = new CheckOut();
 
+      System.out.println("-----------MSK HOTEL-----------");
+      System.out.println("     Welcome to MSK Hotel");
+      System.out.println("  We wish you a pleasant stay!");
+      System.out.println("-------------------------------");
+      
       do {
          System.out.println("Main Menu:");
          System.out.println("1 - Reservation");

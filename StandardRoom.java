@@ -63,7 +63,7 @@ public class StandardRoom {
 			System.out.println("Include Diner \t");
 			System.out.println();
 		}
-		System.out.println("Price: \t\t\t$" + price + " (Before TAX)");
+		System.out.println("Price: \t\t\t$" + price + " (Excl. Tax)");
 		System.out.println("--------------------------------");
 		System.out.println();
 	}

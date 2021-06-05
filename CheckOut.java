@@ -58,12 +58,13 @@ public class CheckOut {
 		System.out.println("------------------- Checkout -------------------");
 		System.out.println(info);
 		System.out.println(reserv);
-		System.out.println("Subtotal: " + subtotal);
-		System.out.println("Total after adding Taxes and Discounts: " + (calculateTotal() - discount));
-		System.out.println();
+		System.out.println("Subtotal: \t\t\t\t $" + subtotal);
+		System.out.println("Total after adding Taxes and Discounts: $" + (calculateTotal() - discount));
+		System.out.println("----------------------------------------------------");
 		payingMethod(input);
 		System.out.println();
 		System.out.println("---------- Thank you for choosing MSK ----------");
+		System.out.println();
 	}
 
 	// method for discounts
