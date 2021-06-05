@@ -181,14 +181,13 @@ public class GuestInformation extends Reservation{
 	}
 
 	// Method to display all the guest informations
-	public void getGuestInformation() {
-		System.out.println("Guest Informations:");
-		System.out.println(getFirstName());
-		System.out.printf("Name: %s %s \n", firstName, lastName);
-		System.out.println("Address: " + address);
-		System.out.println("Nationality: " + nationality);
-		System.out.println("Phone Number: " + phoneNumber);
-		System.out.println("ID Type: " + idType);
-		System.out.println("ID Number: " + idNumber);
+	public String toStringGuestInformation() {
+		return "Guest Informations:\n" +
+		"Name: " + firstName + " " + lastName + "\n" +
+		"Address: " + address + "\n" +
+		"Nationality: " + nationality + "\n" +
+		"Phone Number: " + phoneNumber + "\n" +
+		"ID Type: " + idType + "\n" +
+		"ID Number: " + idNumber + "\n";
 	}
 }

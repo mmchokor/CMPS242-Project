@@ -54,27 +54,26 @@ public class Reservation {
 
 	// Method to set the guest reservation info
 	public void setGuestReservation(Scanner input) {
-		System.out.println("Enter the Check in date:");
+		System.out.println("Enter the Check in date (dd/mm/yyyy):");
 		this.dateIn = input.nextLine();
 		this.dateIn = input.nextLine();
-		System.out.println("Enter the Check out date:");
+		System.out.println("Enter the Check out date (dd/mm/yyyy):");
 		this.dateOut = input.nextLine();
 		roomTypeSelect(input);
-		System.out.println("Enter the number of adult(s):");
+		System.out.println("Enter the number of adult(s) (ONLY INTEGERS):");
 		this.adults = input.nextInt();
-		System.out.println("Enter the number of children(s):");
+		System.out.println("Enter the number of children (ONLY INTEGERS):");
 		this.children = input.nextInt();
 	}
 
 	// method to display the guest reservation info
-	public void getGuestReservation() {
-		System.out.println("Guest Reservation Info:");
-		System.out.println("Check in date: " + dateIn);
-		System.out.println("Check out date: " + dateOut);
-		System.out.println("Room Type:" + roomTypeStr);
-		System.out.println("Number of Adult(s) (ONLY INTEGERS): " + adults);
-		System.out.println("Number of Children (ONLY INTEGERS): " + children);
-		System.out.println();
+	public String toStringGuestReservation() {
+		return "Guest Reservation Info:\n" +
+		"Check in date: " + dateIn + "\n" +
+		"Check out date: " + dateOut + "\n" +
+		"Room Type:" + roomTypeStr + "\n" +
+		"Number of Adult(s): " + adults + "\n" +
+		"Number of Children: " + children + "\n";
 	}
 
 	public void roomTypeSelect(Scanner input) {
@@ -117,6 +116,10 @@ public class Reservation {
    }
 
 	public void getGuestInformation() {
+	}
+
+	public String toStringGuestInformation() {
+		return null;
 	}
 
 }

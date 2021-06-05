@@ -13,7 +13,7 @@ public class Restaurant {
 	protected int oneDrink=15;
 
 	public void order(Scanner input) {
-		System.out.println("MENU");
+		System.out.println("MENU:");
 		System.out.println("BREAKFAST:");
 		System.out.println("1. Breakfast for One Person $"+breakfast4One);
 		System.out.println("2. Breakfast for Two Persons $"+breakfast4Two);

@@ -8,6 +8,7 @@ public class Main {
       int operator;
       // Creating an object g that can access the two classes Guest info and
       Reservation g[] = {new GuestInformation(), new Reservation()};
+      CheckOut c = new CheckOut();
 
       do {
          System.out.println("Main Menu:");
@@ -105,7 +106,21 @@ public class Main {
 
             case 3:
                // Restaurant
-               System.out.println("case 3");
+               Restaurant res[] = {
+                  new Restaurant(),
+                  new RoomService()
+               };
+
+               int option;
+               System.out.println("Where you want to eat?");
+               System.out.println("1 - In the Restaurant");
+               System.out.println("2 - Room Service");
+               option = input.nextInt();
+               if (option == 1) {
+                  res[0].order(input);
+               } else {
+                  res[1].order(input);
+               }
 
                // to go back to the main menu
                backToMenu(input, back);
@@ -114,9 +129,8 @@ public class Main {
 
             case 4:
                // Checkout
-               g[0].getGuestInformation();
-               g[1].getGuestReservation();
-
+               c.checkoutProcess(g[0].toStringGuestInformation(), g[1].toStringGuestReservation(), g[1].getRoomType(), input);
+               
                // to go back to the main menu
                backToMenu(input, back);
 
