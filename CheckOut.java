@@ -1,5 +1,8 @@
 // A class to handle the checkout process of the guest
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class CheckOut {
@@ -9,6 +12,9 @@ public class CheckOut {
 	protected double taxes = 0.11;
 	protected double total;
 	protected String cardNumber;
+
+	// Files
+	File file = new File("Guest_personal_and_reservation_informations.txt");
 
 	// Getters and Setters
 	public double getDiscount() {
@@ -55,7 +61,9 @@ public class CheckOut {
 	public void checkoutProcess(String info, String reserv, int roomType, Scanner input) {
 		roomPriceSelect(roomType);
 		this.discount = discounts(input);
-		System.out.println("------------------- Checkout -------------------");
+		System.out.println("----------------------------------------------------");
+		System.out.println("                       Checkout");
+		System.out.println("----------------------------------------------------");
 		System.out.println(info);
 		System.out.println(reserv);
 		System.out.println("Subtotal: \t\t\t\t $" + subtotal);
@@ -63,8 +71,27 @@ public class CheckOut {
 		System.out.println("----------------------------------------------------");
 		payingMethod(input);
 		System.out.println();
-		System.out.println("---------- Thank you for choosing MSK ----------");
+		System.out.println("------------ Thank you for choosing MSK ------------");
 		System.out.println();
+		try {
+			PrintStream output = new PrintStream(file);
+
+			output.println("----------------------------------------------------");
+			output.println("                       Checkout");
+			output.println("----------------------------------------------------");
+			output.println(info);
+			output.println(reserv);
+			output.println("Subtotal: \t\t\t\t $" + subtotal);
+			output.println("Total after adding Taxes and Discounts: $" + (calculateTotal() - discount));
+			output.println("----------------------------------------------------");
+			output.println();
+			output.println("------------ Thank you for choosing MSK ------------");
+			output.println();
+
+			output.close();
+		} catch (FileNotFoundException e) {
+			System.err.println("Files does not exist!");
+		}
 	}
 
 	// method for discounts
@@ -86,13 +113,13 @@ public class CheckOut {
 					System.out.println("Invalid Promo Code! \nTry Again");
 					discounts(input);
 				}
-				
+
 				break;
 
 			case 2:
 
 				break;
-		
+
 			default:
 				System.out.println("Invalid Input! \nTry Again.");
 				discounts(input);
@@ -128,12 +155,12 @@ public class CheckOut {
 			case 5:
 				subtotal = 500;
 				break;
-		
+
 			default:
 				roomPriceSelect(roomType);
 				break;
 		}
-		
+
 	}
 
 	// Method to select the payment method and so the guest can pay
@@ -153,7 +180,7 @@ public class CheckOut {
 				System.out.println("Enter your card number: ");
 				cardNumber = input.nextLine();
 				cardNumber = input.nextLine();
-				
+
 				if (cardNumber.length() == 16) {
 					System.out.println("Payment was successful. Enjoy your stay!");
 				} else {
@@ -161,11 +188,12 @@ public class CheckOut {
 					payingMethod(input);
 				}
 				break;
-				
-				case 3:
-					System.out.println("Please head to the cashier when you arrive at \nthe hotel and you can give us the check there.");
-					break;
-		
+
+			case 3:
+				System.out.println(
+						"Please head to the cashier when you arrive at \nthe hotel and you can give us the check there.");
+				break;
+
 			default:
 				System.out.println("INVALID OPTION! \nPlease try again.");
 				payingMethod(input);

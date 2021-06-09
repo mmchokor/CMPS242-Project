@@ -10,24 +10,31 @@ public class Main {
       Reservation g[] = {new GuestInformation(), new Reservation()};
       CheckOut c = new CheckOut();
 
-      System.out.println("-----------MSK HOTEL-----------");
-      System.out.println("     Welcome to MSK Hotel");
-      System.out.println("  We wish you a pleasant stay!");
-      System.out.println("-------------------------------");
+      System.out.println("--------------------- MSK HOTEL --------------------");
+      System.out.println("                 Welcome to MSK Hotel");
+      System.out.println("             We wish you a pleasant stay!");
+      System.out.println("----------------------------------------------------");
       
       do {
-         System.out.println("Main Menu:");
+         System.out.println("----------------------------------------------------");
+         System.out.println("                      Main Menu");
+         System.out.println("----------------------------------------------------");
          System.out.println("1 - Reservation");
-         System.out.println("2 - Room Info");
+         System.out.println("2 - Rooms Info");
          System.out.println("3 - Restaurant/Room Food Service");
          System.out.println("4 - Checkout");
          System.out.println("5 - Exit Program");
          System.out.println("Enter the Menu Number you want to Enter: ");
          operator = input.nextInt();
+         System.out.println("----------------------------------------------------");
+         System.out.println();
 
          switch (operator) {
             case 1:
                // Reservation
+               System.out.println("----------------------------------------------------");
+               System.out.println("                    Reservation");
+               System.out.println("----------------------------------------------------");
                g[0].setGuestInfo(input);
                g[1].setGuestReservation(input);
 
@@ -47,7 +54,9 @@ public class Main {
                int roomInfoSelect;
                // a switch inside a do while to let the user which room info he want to display
                do {
-                  System.out.println("Enter the Room Type number to display its info:");
+                  System.out.println("----------------------------------------------------");
+                  System.out.println("                     Rooms Info");
+                  System.out.println("----------------------------------------------------");
                   System.out.println("1 - Standard Room");
                   System.out.println("2 - Double Room");
                   System.out.println("3 - Triple Room");
@@ -55,6 +64,7 @@ public class Main {
                   System.out.println("5 - Suite");
                   System.out.println("6 - View All Rooms info");
                   System.out.println("7 - Return to main menu");
+                  System.out.println("Enter the Room Type number to display its info:");
                   roomInfoSelect = input.nextInt();
 
                   switch (roomInfoSelect) {
@@ -99,6 +109,7 @@ public class Main {
 
                      case 7:
                         // this case is empty so the program doesn't go to default case when exiting
+                        System.out.println();
                         break;
 
                      default:
@@ -115,6 +126,10 @@ public class Main {
                   new Restaurant(),
                   new RoomService()
                };
+
+               System.out.println("----------------------------------------------------");
+               System.out.println("                     Restaurant");
+               System.out.println("----------------------------------------------------");
 
                int option;
                System.out.println("Where you want to eat?");
@@ -164,6 +179,7 @@ public class Main {
          if (back != 0) {
             System.out.println("You have enter a number other than 0. Try Again!");
          }
+         System.out.println();
       } while (back != 0);
    }
 }

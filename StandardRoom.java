@@ -35,7 +35,9 @@ public class StandardRoom {
 
 	// Method to display Room infos
 	public void displayRoom() {
-		System.out.println(roomType);
+		System.out.println("-----------------------------------------");
+		System.out.println(" " + roomType + ":");
+		System.out.println("-----------------------------------------");
 		System.out.println("Number of Beds: \t" + numberOfBeds);
 		System.out.println("Bed size:   \t\t" + bedSize);
 		System.out.println();
@@ -64,7 +66,7 @@ public class StandardRoom {
 			System.out.println();
 		}
 		System.out.println("Price: \t\t\t$" + price + " (Excl. Tax)");
-		System.out.println("--------------------------------");
+		System.out.println("-----------------------------------------");
 		System.out.println();
 	}
 }
